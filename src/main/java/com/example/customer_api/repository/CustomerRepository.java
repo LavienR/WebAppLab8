@@ -20,7 +20,7 @@ public interface CustomerRepository extends JpaRepository<Customer, Long> {
     
     boolean existsByEmail(String email);
     
-    List<Customer> findByStatus(String status);
+    List<Customer> findByStatus(Customer.CustomerStatus status);
     
     @Query("SELECT c FROM Customer c WHERE " +
            "LOWER(c.fullName) LIKE LOWER(CONCAT('%', :keyword, '%')) OR " +
